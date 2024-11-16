@@ -1,6 +1,6 @@
 import unittest
 
-from src.example_package import example
+from src.example_package_truher import example
 
 
 class ExampleTest(unittest.TestCase):
