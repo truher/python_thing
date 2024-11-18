@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "example_package_truher"
-version = "0.0.dev20241117"
+version = "0.0.dev20241118"
 authors = [{name="Joel", email="joel@truher.org"}]
 description = "how to build and publish"
 readme = "README.md"
