@@ -17,7 +17,7 @@ make sure the "build" tool is installed.
 python3 -m pip install --upgrade build
 python3 -m build
 
-## where to serve wheels
+## try uploading from my desktop
 
 first i registered at pypi.
 
@@ -78,8 +78,26 @@ which means a "developmental" release.
 PyPI limits projects to 10GB, so presumably we'd need to manually purge old dev
 versions periodically, which seems like no big deal.
 
-Some other projects (e.g. scipy) use the pypi service of anaconda, but i'd like to avoid anaconda.
+Some other projects (e.g. scipy) use the pypi service of anaconda, but i'd prefer
+pypi over anaconda, just because pypi is an org and anaconda is a com.
 
+## how to upload from github actions
+
+The "normal" way now is apparently to use "trusted publishing" which means
+"let github do it"
+
+https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
+
+so i went to https://test.pypi.org/manage/account/publishing/
+
+and configured project name "example-package-truher", owner "truher", repository "python_thing"
+workflow "python-publish.yml" and i left the environment name blank.
+
+so that was the wrong thing to do since "example-package-truher" already exists.  :-)
+
+so i went to the "publishing" tab of that project and repeated the process, which worked.
+
+i filled out python-publish.yml to push test, we'll see if it works.
 
 
 ## Building for ARM
