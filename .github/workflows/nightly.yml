@@ -1,0 +1,17 @@
+# for now this is actually hourly
+# or on demand, see https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/manually-running-a-workflow
+
+name: Nightly
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0,15,30,45 * * * *'
+
+
+jobs:
+  just-print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print something
+        run: echo "just testing"
