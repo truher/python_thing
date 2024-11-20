@@ -4,7 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "example_package_truher"
-version = "0.0.dev20241118"
+# version = "0.0.dev20241118"
+# see https://packaging.python.org/en/latest/discussions/single-source-version/#single-source-version
+dynamic = ["version"]
 authors = [{name="Joel", email="joel@truher.org"}]
 description = "how to build and publish"
 readme = "README.md"
@@ -18,3 +20,6 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/truher/python_thing"
 Issues = "https://github.com/truher/python_thing/issues"
+
+[tool.setuptools.dynamic]
+version = {file = [version.txt]}

@@ -9,6 +9,12 @@ jobs:
     name: build dist
     runs-on: ubuntu-latest
 
+  write-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: write the version file
+        run: echo "12345"  > version.txt
+
     steps:
       - uses: actions/checkout@v4
       - name: set up python
@@ -20,8 +26,9 @@ jobs:
         run: python3 -m pip install build --user
 
       - name: build a wheel and tarball
+        # pyproject.toml references version.txt 
         run: python3 -m build
-        
+
       - name: upload the dist
         uses: actions/upload-artifact@v4
         with:
