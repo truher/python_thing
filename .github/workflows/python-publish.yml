@@ -5,15 +5,16 @@ name: Publish to test.pypi.org
 on: push
 
 jobs:
-  build:
-    name: build dist
-    runs-on: ubuntu-latest
 
   write-version:
     runs-on: ubuntu-latest
     steps:
       - name: write the version file
         run: echo "12345"  > version.txt
+
+  build:
+    name: build dist
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
