@@ -23,3 +23,6 @@ Issues = "https://github.com/truher/python_thing/issues"
 
 [tool.setuptools.dynamic]
 version = {file = ["version.txt"]}
+
+[tool.setuptools]
+packages = ["example_package_truher"]
