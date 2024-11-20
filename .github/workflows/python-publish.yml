@@ -5,13 +5,6 @@ name: Publish to test.pypi.org
 on: push
 
 jobs:
-
-  write-version:
-    runs-on: ubuntu-latest
-    steps:
-      - name: write the version file
-        run: echo "12345"  > version.txt
-
   build:
     name: build dist
     needs:
@@ -24,6 +17,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+
+      - name: write the version file
+        run: echo "12345"  > version.txt
+
+      - name: check the version file
+        run: cat version.txt
 
       - name: install pypa/build
         run: python3 -m pip install build --user
