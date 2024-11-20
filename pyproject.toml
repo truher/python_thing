@@ -1,11 +1,11 @@
+# Uses the contents of version.txt as the version.
+
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "example_package_truher"
-# version = "0.0.dev20241118"
-# see https://packaging.python.org/en/latest/discussions/single-source-version/#single-source-version
 dynamic = ["version"]
 authors = [{name="Joel", email="joel@truher.org"}]
 description = "how to build and publish"
