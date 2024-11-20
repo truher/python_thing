@@ -40,7 +40,7 @@ jobs:
         run: pytest tests
 
       - name: Write the version file
-        run: python3 date.py > version.txt
+        run: python3 .github/scripts/date.py > version.txt
 
       - name: Build
         run: python3 -m build
