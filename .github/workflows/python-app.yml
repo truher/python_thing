@@ -36,3 +36,11 @@ jobs:
           path: junit/test-results.xml
         if: ${{ always() }}
 
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: ${{ always() }}
+        with:
+           # comments don't work with fork PRs anyway
+           comment_mode: off
+           files: |
+             junit/test-results.xml
