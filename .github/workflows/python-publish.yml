@@ -17,7 +17,8 @@ jobs:
           python-version: "3.10"
 
       - name: write the version file
-        run: echo "12345"  > version.txt
+        # produces, for example, 2024.11.19.18.54
+        run: python3 date.py > version.txt
 
       - name: check the version file
         run: cat version.txt
