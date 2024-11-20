@@ -1,6 +1,6 @@
 # Runs the tests.
 
-name: Python package
+name: Test
 
 on:
   workflow_dispatch:
