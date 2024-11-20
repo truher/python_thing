@@ -36,6 +36,9 @@ jobs:
           path: junit/test-results.xml
         if: ${{ always() }}
 
+      - name: blarg
+        run: ls junit
+
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: ${{ always() }}
