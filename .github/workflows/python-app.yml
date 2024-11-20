@@ -29,13 +29,6 @@ jobs:
       - name: Test
         run: pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
-      # - name: Upload test results
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: pytest-results
-      #     path: junit/test-results.xml
-      #   if: ${{ always() }}
-
       - name: Publish test results
         # To make this work, you have to enable "read/write" permissions
         # in the "repo settings"
@@ -45,4 +38,4 @@ jobs:
            # Comments don't work with fork PRs anyway
            comment_mode: off
            files: |
-             **/test*.xml
+             junit/test-results.xml
