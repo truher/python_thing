@@ -46,4 +46,4 @@ jobs:
            # comments don't work with fork PRs anyway
            comment_mode: off
            files: |
-             junit/test-results.xml
+             **/test*.xml
